@@ -1,0 +1,154 @@
+@import './tokens.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body, html, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--aeris-bg-space);
+  color: var(--aeris-text-primary);
+  font-family: var(--aeris-font-sans);
+  font-size: 13px;
+  user-select: none;
+}
+
+/* Typography Helpers */
+.font-mono {
+  font-family: var(--aeris-font-mono);
+}
+
+/* Glassmorphism Panel */
+.aeris-panel {
+  background: var(--aeris-bg-surface-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--aeris-border-subtle);
+  border-radius: 6px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+.aeris-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--aeris-border-subtle);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--aeris-text-secondary);
+}
+
+/* Workspace Grid Layout */
+.aeris-workspace {
+  display: grid;
+  grid-template-rows: 48px 1fr 36px;
+  grid-template-columns: 1fr;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.aeris-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background: var(--aeris-bg-surface);
+  border-bottom: 1px solid var(--aeris-border-subtle);
+  z-index: 20;
+}
+
+.aeris-viewport-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.aeris-footer-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background: var(--aeris-bg-surface);
+  border-top: 1px solid var(--aeris-border-subtle);
+  font-size: 11px;
+  color: var(--aeris-text-secondary);
+  z-index: 20;
+}
+
+/* Buttons */
+.aeris-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--aeris-bg-surface-elevated);
+  border: 1px solid var(--aeris-border-subtle);
+  border-radius: 4px;
+  color: var(--aeris-text-primary);
+  font-family: var(--aeris-font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.aeris-btn:hover {
+  background: var(--aeris-border-active);
+  border-color: var(--aeris-accent-amber);
+  color: #fff;
+}
+
+.aeris-btn-primary {
+  background: var(--aeris-accent-amber);
+  border-color: var(--aeris-accent-amber);
+  color: #07080a;
+  font-weight: 600;
+}
+
+.aeris-btn-primary:hover {
+  background: #ff8f26;
+  box-shadow: 0 0 12px var(--aeris-accent-amber-glow);
+}
+
+.aeris-btn-active {
+  background: rgba(255, 122, 0, 0.15);
+  border-color: var(--aeris-accent-amber);
+  color: var(--aeris-accent-amber);
+}
+
+/* Status Indicators */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot-active {
+  background: var(--aeris-accent-emerald);
+  box-shadow: 0 0 8px rgba(0, 230, 118, 0.5);
+}
+
+.status-dot-warn {
+  background: var(--aeris-accent-amber);
+  box-shadow: 0 0 8px var(--aeris-accent-amber-glow);
+}
+
+.status-dot-error {
+  background: var(--aeris-accent-crimson);
+  box-shadow: 0 0 8px rgba(255, 23, 68, 0.5);
+}
+
+.status-dot-inactive {
+  background: var(--aeris-text-muted);
+}
